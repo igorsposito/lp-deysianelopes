@@ -35,6 +35,17 @@ O briefing original está em `PROMPT-LP-DRA-DEYSIANE.md`. **As regras deste arqu
 - Botões secundários sobre fundo escuro com variante `on-dark` (nunca texto escuro em fundo escuro).
 - Mobile-first, muito respiro, cantos arredondados suaves, sombras sutis, animações discretas.
 
+## Mapa das seções (layout · animação, sem repetir animação)
+Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
+1. Hero (areia) · split, título à esquerda, foto `hero.jpg` à direita · título linha a linha com máscara.
+2. Sobre (off) · foto à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
+3. Tratamentos (areia) · título sticky à esquerda, cards deslocados à direita · stagger de cards.
+4. Segurança (café escuro) · título largo no topo, foto `jaleco.jpg` + pontos · slide lateral.
+5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
+6. Faixa 1 ml (terracota) · número grande como elemento gráfico + texto · scale-in.
+7. Dúvidas (areia) · título sticky + accordion · blur in. JSON-LD `FAQPage` em `page.tsx`.
+8. Contato (off) · card sobreposto à foto `consultorio.jpg` · scale-in (zoom) da imagem.
+
 ## WhatsApp (regra fixa)
 - Todo link de WhatsApp vem de `getWhatsAppLink(secao, extra?)` em `src/lib/whatsapp.ts`: `wa.me` + mensagem com `encodeURIComponent`, sempre começando com **"Olá, vim do site"** e citando a seção de origem. Nunca montar mensagem no JSX.
 - No JSX, usar o componente `WhatsAppLink` (dispara o evento `whatsapp_click` com a seção).

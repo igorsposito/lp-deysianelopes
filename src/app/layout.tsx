@@ -6,6 +6,7 @@ import { CookieBanner } from "@/components/layout/cookie-banner";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
+import { Providers } from "@/components/providers";
 import { getNavegacao, getSite } from "@/lib/data";
 import "./globals.css";
 
@@ -48,11 +49,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
-        <Header navegacao={navegacao} />
-        <main id="conteudo">{children}</main>
-        <Footer site={site} navegacao={navegacao} />
-        <WhatsAppFloat />
-        <CookieBanner />
+        <Providers>
+          <Header navegacao={navegacao} />
+          <main id="conteudo">{children}</main>
+          <Footer site={site} navegacao={navegacao} />
+          <WhatsAppFloat />
+          <CookieBanner />
+        </Providers>
         <Analytics />
         <SpeedInsights />
       </body>
