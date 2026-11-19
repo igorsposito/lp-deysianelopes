@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-off: #faf7f2;
+  --color-areia: #efe6dc;
+  --color-areia-escura: #e2d4c4;
+  --color-cafe: #2b211c;
+  --color-cafe-suave: #5c4a40;
+  --color-cafe-escuro: #2b1e18;
+  --color-terracota: #b4532a;
+  --color-terracota-hover: #9a4321;
+  --color-ouro-1: #a67c2e;
+  --color-ouro-2: #f3d98b;
+  --color-ouro-3: #b8892f;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-suave: 0 10px 30px -12px rgb(43 33 28 / 0.18);
+  --shadow-elevada: 0 24px 60px -20px rgb(43 33 28 / 0.28);
+
+  --animate-shimmer: shimmer 1.6s ease-in-out;
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+/* Degradê dourado: SÓ em botões principais, linhas finas e detalhes. */
+@utility bg-gold {
+  background-color: #b8892f;
+  background-image: linear-gradient(135deg, #a67c2e, #f3d98b, #b8892f);
+}
+
+/* Versão com shimmer no hover (botões principais). */
+@utility bg-gold-shimmer {
+  background-color: #b8892f;
+  background-image: linear-gradient(
+    115deg,
+    #a67c2e 0%,
+    #b8892f 25%,
+    #f3d98b 45%,
+    #fbecc0 50%,
+    #f3d98b 55%,
+    #b8892f 75%,
+    #a67c2e 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.9s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-position: 100% 50%;
+  }
+}
+
+/* Fios finos dourados (bordas/detalhes). */
+@utility border-gold {
+  border: 1px solid #b8892f;
+  border-image: linear-gradient(135deg, #a67c2e, #f3d98b, #b8892f) 1;
+}
+
+@utility bg-terracota-grad {
+  background-color: #b4532a;
+  background-image: linear-gradient(135deg, #b4532a, #9a4321);
+}
+
+@utility bg-cafe-grad {
+  background-color: #2b1e18;
+  background-image: linear-gradient(160deg, #3a2a22, #2b1e18);
+}
+
+@utility bg-areia-grad {
+  background-color: #efe6dc;
+  background-image: linear-gradient(160deg, #faf7f2, #efe6dc);
+}
+
+@utility container-lp {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-off);
+    color: var(--color-cafe);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-terracota);
+    color: var(--color-off);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-terracota);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
