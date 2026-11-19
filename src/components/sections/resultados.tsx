@@ -4,6 +4,10 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import { Arcos } from "@/components/decor/arcos";
+import { Blob } from "@/components/decor/blob";
+import { Monograma } from "@/components/decor/monograma";
+import { Parallax } from "@/components/decor/parallax";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { Depoimento } from "@/data/types";
@@ -37,8 +41,16 @@ export function Resultados({ depoimentos }: { depoimentos: Depoimento[] }) {
   const reduzir = useReducedMotion();
 
   return (
-    <section id="resultados" className="bg-off py-24 md:py-32">
-      <div className="container-lp">
+    <section id="resultados" className="relative isolate overflow-clip bg-off py-24 md:py-32">
+      <Blob cor="terracota" atraso="-6s" className="top-[30%] -right-40 size-[24rem] opacity-50 md:size-[38rem]" />
+      <Parallax distancia={60} className="top-10 right-[-14%] hidden w-[40rem] -rotate-6 text-cafe opacity-[0.04] md:block">
+        <Monograma className="w-full" />
+      </Parallax>
+      <Parallax distancia={45} giro={10} className="bottom-[-8%] -left-28 w-72 opacity-30 md:-left-24 md:w-[30rem]">
+        <Arcos forma="circulos" className="w-full" />
+      </Parallax>
+
+      <div className="container-lp relative z-10">
         <div className="grid gap-8 md:grid-cols-12 md:items-end">
           <h2 className="text-4xl leading-tight font-light md:col-span-7 md:text-6xl">
             Naturalidade é o <span className="font-semibold text-terracota">resultado</span>.

@@ -3,6 +3,9 @@
 import { Crosshair, HeartHandshake, ScanSearch } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { Arcos } from "@/components/decor/arcos";
+import { Grain } from "@/components/decor/grain";
+import { Parallax } from "@/components/decor/parallax";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 
@@ -29,8 +32,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 // Animação da seção: slide lateral (foto vem da esquerda, texto da direita).
 export function Seguranca() {
   return (
-    <section id="seguranca" className="bg-cafe-grad overflow-hidden py-24 text-off md:py-32">
-      <div className="container-lp">
+    <section id="seguranca" className="bg-cafe-grad relative isolate overflow-clip py-24 text-off md:py-32">
+      <Grain />
+      <Parallax distancia={70} giro={6} className="top-[-4%] right-[-30%] w-[24rem] rotate-12 opacity-[0.07] md:right-[-10%] md:w-[44rem]">
+        <Arcos forma="gota" className="w-full" />
+      </Parallax>
+
+      <div className="container-lp relative z-10">
         <h2 className="max-w-4xl text-4xl leading-tight font-light md:text-6xl">
           O que você não vê também <span className="font-semibold text-ouro-2">importa</span>.
         </h2>

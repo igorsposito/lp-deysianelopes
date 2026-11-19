@@ -12,6 +12,9 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion } from "motion/react";
+import { Blob } from "@/components/decor/blob";
+import { Parallax } from "@/components/decor/parallax";
+import { Ramo } from "@/components/decor/ramo";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { Tratamento } from "@/data/types";
 
@@ -27,16 +30,21 @@ const icones: Record<string, LucideIcon> = {
 // Animação da seção: stagger de cards subindo em sequência.
 export function Tratamentos({ tratamentos }: { tratamentos: Tratamento[] }) {
   return (
-    <section id="tratamentos" className="bg-areia py-24 md:py-32">
-      <div className="container-lp grid gap-14 lg:grid-cols-12 lg:gap-12">
+    <section id="tratamentos" className="relative isolate overflow-clip bg-areia py-24 md:py-32">
+      <Blob cor="nude" className="bottom-[-10%] -left-40 size-[26rem] opacity-70 md:size-[40rem]" />
+      <Parallax distancia={30} giro={4} className="-top-4 -right-10 w-40 rotate-[200deg] text-ouro-3 opacity-40 md:-right-6 md:w-72">
+        <Ramo className="w-full" />
+      </Parallax>
+
+      <div className="container-lp relative z-10 grid gap-14 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
             <h2 className="text-4xl leading-tight font-light md:text-5xl">
-              Tratamentos para <span className="font-semibold">rejuvenescer</span> sem deixar de ser você.
+              Cada tratamento pensado para o <span className="font-semibold">seu</span> rosto.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-cafe-suave">
-              Cada rosto pede um plano. A indicação acontece na avaliação, e às vezes a melhor resposta é
-              fazer menos do que você imaginava.
+              A indicação acontece na avaliação, e às vezes a melhor resposta é fazer menos do que você
+              imaginava.
             </p>
           </div>
         </div>

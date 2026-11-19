@@ -1,14 +1,22 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Grain } from "@/components/decor/grain";
+import { Monograma } from "@/components/decor/monograma";
+import { Parallax } from "@/components/decor/parallax";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 
 // Animação da seção: número grande entrando em scale-in.
 export function UmMl() {
   return (
-    <section aria-labelledby="titulo-um-ml" className="bg-terracota-grad overflow-hidden py-20 text-off md:py-28">
-      <div className="container-lp grid items-center gap-10 md:grid-cols-12">
+    <section aria-labelledby="titulo-um-ml" className="bg-terracota-grad relative isolate overflow-clip py-20 text-off md:py-28">
+      <Grain />
+      <Parallax distancia={40} className="right-[-18%] bottom-[-30%] w-[22rem] rotate-[8deg] text-ouro-2 opacity-[0.08] md:right-[-6%] md:w-[36rem]">
+        <Monograma className="w-full" />
+      </Parallax>
+
+      <div className="container-lp relative z-10 grid items-center gap-10 md:grid-cols-12">
         <motion.p
           aria-hidden
           className="font-display text-[8rem] leading-[0.85] font-extralight tracking-tighter text-off/90 md:col-span-5 md:text-[12rem] lg:text-[14rem]"

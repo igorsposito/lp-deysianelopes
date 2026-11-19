@@ -19,14 +19,18 @@
   --shadow-suave: 0 10px 30px -12px rgb(43 33 28 / 0.18);
   --shadow-elevada: 0 24px 60px -20px rgb(43 33 28 / 0.28);
 
-  --animate-shimmer: shimmer 1.6s ease-in-out;
+  --animate-drift: drift 26s ease-in-out infinite alternate;
 
-  @keyframes shimmer {
+  /* Drift lento dos blobs decorativos */
+  @keyframes drift {
     0% {
-      background-position: 0% 50%;
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translate(4%, -6%) rotate(12deg) scale(1.06);
     }
     100% {
-      background-position: 100% 50%;
+      transform: translate(-5%, 4%) rotate(-8deg) scale(0.96);
     }
   }
 }

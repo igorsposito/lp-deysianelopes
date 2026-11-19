@@ -3,6 +3,9 @@
 import { Plus } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useId, useState } from "react";
+import { Blob } from "@/components/decor/blob";
+import { Parallax } from "@/components/decor/parallax";
+import { Ramo } from "@/components/decor/ramo";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { Pergunta } from "@/data/types";
@@ -14,8 +17,13 @@ export function Duvidas({ perguntas }: { perguntas: Pergunta[] }) {
   const base = useId();
 
   return (
-    <section id="duvidas" className="bg-areia py-24 md:py-32">
-      <div className="container-lp grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-20">
+    <section id="duvidas" className="relative isolate overflow-clip bg-areia py-24 md:py-32">
+      <Blob cor="areia" atraso="-12s" className="-top-32 -right-32 size-96 opacity-90 md:size-[34rem]" />
+      <Parallax distancia={30} giro={-4} className="-bottom-6 -left-8 w-36 -scale-x-100 rotate-[-10deg] text-ouro-3 opacity-40 md:w-64">
+        <Ramo className="w-full" />
+      </Parallax>
+
+      <div className="container-lp relative z-10 grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-20">
         <div>
           <div className="lg:sticky lg:top-32">
             <h2 className="text-4xl leading-tight font-light md:text-5xl">

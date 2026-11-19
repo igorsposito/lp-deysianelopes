@@ -3,6 +3,9 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
+import { Blob } from "@/components/decor/blob";
+import { Parallax } from "@/components/decor/parallax";
+import { Perfil } from "@/components/decor/perfil";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { SiteInfo } from "@/data/types";
@@ -15,8 +18,13 @@ export function Sobre({ site }: { site: SiteInfo }) {
   const y = useTransform(scrollYProgress, [0, 1], reduzir ? ["0%", "0%"] : ["-8%", "8%"]);
 
   return (
-    <section id="sobre" ref={ref} className="bg-off py-24 md:py-32">
-      <div className="container-lp grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+    <section id="sobre" ref={ref} className="relative isolate overflow-clip bg-off py-24 md:py-32">
+      <Blob cor="areia" className="top-[12%] -left-32 size-96 opacity-80 md:size-[36rem]" />
+      <Parallax distancia={40} className="-top-6 -right-16 w-56 opacity-30 md:top-6 md:right-[-2%] md:w-[30rem] md:opacity-35">
+        <Perfil className="w-full" />
+      </Parallax>
+
+      <div className="container-lp relative z-10 grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
         <div className="relative lg:col-span-5">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-areia-escura">
             <motion.div className="absolute -inset-y-[10%] inset-x-0" style={{ y }}>

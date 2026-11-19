@@ -2,6 +2,7 @@ import { MapPin, MessageCircle } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram";
 import Image from "next/image";
 import Link from "next/link";
+import { Grain } from "@/components/decor/grain";
 import { Logo } from "@/components/logo";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { NavItem, SiteInfo } from "@/data/types";
@@ -9,8 +10,9 @@ import { AnoAtual } from "./ano-atual";
 
 export function Footer({ site, navegacao }: { site: SiteInfo; navegacao: NavItem[] }) {
   return (
-    <footer className="bg-cafe-grad text-off/80">
-      <div className="container-lp grid gap-12 py-16 md:grid-cols-12 md:py-20">
+    <footer className="bg-cafe-grad relative isolate text-off/80">
+      <Grain />
+      <div className="container-lp relative z-10 grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
           <Logo tom="claro" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
@@ -58,7 +60,7 @@ export function Footer({ site, navegacao }: { site: SiteInfo; navegacao: NavItem
         </ul>
       </div>
 
-      <div className="border-t border-off/10">
+      <div className="relative z-10 border-t border-off/10">
         <div className="container-lp flex flex-col gap-5 py-6 text-xs md:flex-row md:items-center md:justify-between">
           <p>
             © <AnoAtual /> {site.nome}. Todos os direitos reservados.{" "}
