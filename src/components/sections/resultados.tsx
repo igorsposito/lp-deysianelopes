@@ -19,21 +19,18 @@ const principios = [
     titulo: "Resultado que a gente não precisa explicar",
     texto:
       "Ninguém precisa perguntar o que você fez. Só perceber que você está com uma cara ótima, descansada, mais você.",
-    classe: "md:col-span-7",
   },
   {
     numero: "02",
     titulo: "Todo resultado começa na conversa",
     texto:
       "Antes de falar de produto, a gente fala de você: rotina, incômodos, expectativas e aquilo de que você não abre mão.",
-    classe: "md:col-span-5 md:mt-28",
   },
   {
     numero: "03",
     titulo: "Avaliação antes de qualquer agulha",
     texto:
       "Nem toda olheira precisa de preenchimento, e nem todo incômodo pede procedimento. Às vezes a indicação é esperar.",
-    classe: "md:col-span-6 md:col-start-4",
   },
 ];
 
@@ -78,7 +75,7 @@ export function Resultados({
         </div>
 
         <motion.div
-          className="mt-16 grid gap-6 md:mt-24 md:grid-cols-12 md:gap-x-10 md:gap-y-12"
+          className="mt-16 grid gap-6 md:mt-24 lg:grid-cols-3 lg:gap-8"
           initial={reduzir ? false : "oculto"}
           whileInView="visivel"
           viewport={{ once: true, amount: 0.15 }}
@@ -86,7 +83,7 @@ export function Resultados({
           {principios.map((p, i) => (
             <motion.article
               key={p.numero}
-              className={`relative overflow-hidden rounded-3xl bg-areia p-8 md:p-10 ${p.classe}`}
+              className="relative h-full overflow-hidden rounded-3xl bg-areia p-8 md:p-10"
               custom={i}
               variants={revelar}
             >
@@ -96,7 +93,7 @@ export function Resultados({
               >
                 {p.numero}
               </span>
-              <h3 className="mt-6 text-2xl leading-snug font-medium md:text-3xl">{p.titulo}</h3>
+              <h3 className="mt-6 text-2xl leading-snug font-medium md:text-3xl lg:text-2xl">{p.titulo}</h3>
               <p className="mt-4 max-w-md leading-relaxed text-cafe-suave">{p.texto}</p>
             </motion.article>
           ))}

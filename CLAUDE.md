@@ -41,7 +41,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 2. Sobre (off) · foto `aboutsection.webp` à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
 3. Tratamentos (areia) · cabeçalho dividido (texto + CTA à esquerda, arte quadrada `drabotox.webp` à direita com moldura dourada deslocada) e cards em grade regular 3×2 · stagger de cards.
 4. Segurança (café escuro) · título largo no topo, foto `procedimentos.webp` + pontos · slide lateral.
-5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande, moldes de antes e depois em grade 3 colunas (`ComparadorAntesDepois`) · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
+5. Resultados (off) · cabeçalho dividido, princípios em 3 cards iguais numa linha (desktop) com número grande, moldes de antes e depois em grade 3 colunas (`ComparadorAntesDepois`) · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
 6. Faixa Primeiro passo (terracota, `primeiro-passo.tsx`) · texto + CTA à esquerda, 3 etapas da avaliação à direita · scale-in das etapas.
 7. Dúvidas (areia) · título sticky + accordion · blur in. JSON-LD `FAQPage` em `page.tsx`.
 8. Contato (off) · card sobreposto à foto `contatocta.webp` (quadrada no desktop, 4:5 no celular) · scale-in (zoom) da imagem.
