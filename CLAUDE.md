@@ -39,7 +39,7 @@ O briefing original está em `PROMPT-LP-DRA-DEYSIANE.md`. **As regras deste arqu
 Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 1. Hero · foto `herosection.png` em tela cheia (ela à direita), véu claro `veil-baixo` (celular) e `lg:veil-esquerda` (desktop) e texto à esquerda (no celular, texto embaixo) · título linha a linha com máscara.
 2. Sobre (off) · foto `aboutsection.webp` à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
-3. Tratamentos (areia) · título sticky à esquerda, cards deslocados à direita · stagger de cards.
+3. Tratamentos (areia) · cabeçalho dividido (texto + CTA à esquerda, arte quadrada `drabotox.webp` à direita com moldura dourada deslocada) e cards em grade regular 3×2 · stagger de cards.
 4. Segurança (café escuro) · título largo no topo, foto `procedimentos.webp` + pontos · slide lateral.
 5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
 6. Faixa 1 ml (terracota) · número grande como elemento gráfico + texto · scale-in.
@@ -47,11 +47,11 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 8. Contato (off) · card sobreposto à foto `consultorio.jpg` · scale-in (zoom) da imagem.
 
 ## Decoração (marca d'água), em `src/components/decor/`
-`Monograma` (DL em contorno), `Molecula` (ácido hialurônico), `ContaGotas` (frasco de sérum), `Gota`, `Ramo` (botânico), `Arcos` (gotas ou círculos concêntricos dourados), `Blob` (forma orgânica com blur e drift), `Grain` (ruído feTurbulence), `Parallax` (wrapper com parallax leve).
+`Monograma` (DL em contorno), `Molecula` (ácido hialurônico), `ContaGotas` (frasco de sérum), `Gota`, `Seringa`, `Ramo` (botânico), `Arcos` (gotas ou círculos concêntricos dourados), `Blob` (forma orgânica com blur e drift), `Grain` (ruído feTurbulence), `Parallax` (wrapper com parallax leve).
 - Sempre `aria-hidden`, `pointer-events-none`, atrás do conteúdo: a seção recebe `relative isolate overflow-clip` e o container `relative z-10`.
 - Claro: monograma 4 a 6% em café. Escuro: marcas em dourado 6 a 8% + `Grain`.
 - Não repetir o mesmo elemento na mesma posição em seções vizinhas. Mapa atual:
-  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (ramo no canto superior direito + blob) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
+  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (seringa diagonal à esquerda + ramo no canto inferior direito + blobs) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
 
 ## WhatsApp (regra fixa)
 - Todo link de WhatsApp vem de `getWhatsAppLink(secao, extra?)` em `src/lib/whatsapp.ts`: `wa.me` + mensagem com `encodeURIComponent`, sempre começando com **"Olá, vim do site"** e citando a seção de origem. Nunca montar mensagem no JSX.
@@ -59,7 +59,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 
 ## Dados e imagens
 - Conteúdo em arquivos TS tipados em `src/data/`, lido por funções em `src/lib/data/` (pronto para virar CMS).
-- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `aboutsection.webp`, `procedimentos.webp`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
+- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `aboutsection.webp`, `procedimentos.webp`, `drabotox.webp`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
 - `next/image`: usar `preload` (não `priority`). Sem `new Date()`/`Math.random()` em Server Components (Cache Components): usar Client Component.
 
 ## Fluxo de trabalho
