@@ -6,7 +6,7 @@ import { Seguranca } from "@/components/sections/seguranca";
 import { Sobre } from "@/components/sections/sobre";
 import { Tratamentos } from "@/components/sections/tratamentos";
 import { PrimeiroPasso } from "@/components/sections/primeiro-passo";
-import { getDepoimentos, getPerguntas, getSite, getTratamentos } from "@/lib/data";
+import { getAntesDepois, getDepoimentos, getPerguntas, getSite, getTratamentos } from "@/lib/data";
 
 export default function Home() {
   const site = getSite();
@@ -28,7 +28,7 @@ export default function Home() {
       <Sobre site={site} />
       <Tratamentos tratamentos={getTratamentos()} />
       <Seguranca />
-      <Resultados depoimentos={getDepoimentos()} />
+      <Resultados depoimentos={getDepoimentos()} antesDepois={getAntesDepois()} />
       <PrimeiroPasso />
       <Duvidas perguntas={perguntas} />
       <Contato site={site} />

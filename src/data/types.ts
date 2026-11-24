@@ -38,3 +38,12 @@ export type Pergunta = {
   pergunta: string;
   resposta: string;
 };
+
+export type AntesDepois = {
+  tratamento: string;
+  /** Ex.: "1 sessão", "2 sessões com intervalo de 30 dias". */
+  legenda?: string;
+  /** Caminhos em public/images/resultados/. Sem as duas fotos, o card mostra o molde. */
+  antes?: string;
+  depois?: string;
+};

@@ -10,6 +10,7 @@
   - `procedimento.jpg`: ela atendendo ou aplicando, de preferência com o ultrassom (horizontal, mín. 1200×900).
 - [ ] Logo oficial (se houver). Hoje o logo é tipográfico.
 - [ ] Endereço do consultório e horários de atendimento (seção Contato, mapa e JSON-LD).
+- [ ] Fotos de antes e depois (só com autorização escrita das pacientes e após confirmar regras do COFEN). Salvar em `public/images/resultados/` e preencher `src/data/resultados.ts` (tratamento, legenda, antes, depois).
 - [ ] Depoimentos reais em texto, com autorização das pacientes (`src/data/depoimentos.ts`).
 - [ ] Validar respostas do FAQ (`src/data/faq.ts`) e textos dos tratamentos.
 - [ ] Formação e especializações para a seção Sobre.

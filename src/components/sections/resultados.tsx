@@ -4,13 +4,14 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import { ComparadorAntesDepois } from "@/components/comparador-antes-depois";
 import { Arcos } from "@/components/decor/arcos";
 import { Blob } from "@/components/decor/blob";
 import { Monograma } from "@/components/decor/monograma";
 import { Parallax } from "@/components/decor/parallax";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
-import type { Depoimento } from "@/data/types";
+import type { AntesDepois, Depoimento } from "@/data/types";
 
 const principios = [
   {
@@ -37,7 +38,13 @@ const principios = [
 ];
 
 // Animação da seção: reveal com máscara (clip-path abrindo de baixo para cima).
-export function Resultados({ depoimentos }: { depoimentos: Depoimento[] }) {
+export function Resultados({
+  depoimentos,
+  antesDepois,
+}: {
+  depoimentos: Depoimento[];
+  antesDepois: AntesDepois[];
+}) {
   const reduzir = useReducedMotion();
 
   return (
@@ -56,8 +63,8 @@ export function Resultados({ depoimentos }: { depoimentos: Depoimento[] }) {
             Naturalidade é o <span className="font-semibold text-terracota">resultado</span>.
           </h2>
           <p className="text-lg leading-relaxed text-cafe-suave md:col-span-5">
-            Aqui você não encontra fotos de antes e depois. Encontra o que guia cada atendimento e o que as
-            pacientes contam da experiência.
+            Três princípios guiam cada atendimento. O objetivo é que as pessoas percebam que você está
+            ótima, sem descobrir o que você fez.
           </p>
         </div>
 
@@ -82,6 +89,32 @@ export function Resultados({ depoimentos }: { depoimentos: Depoimento[] }) {
             </motion.article>
           ))}
         </div>
+
+        {antesDepois.length > 0 && (
+          <div className="mt-24 md:mt-32">
+            <div className="grid gap-6 md:grid-cols-12 md:items-end">
+              <h3 className="text-3xl leading-tight font-light md:col-span-7 md:text-4xl">
+                Antes e depois, sem <span className="font-semibold">exagero</span>.
+              </h3>
+              <p className="leading-relaxed text-cafe-suave md:col-span-5">
+                Arraste a linha para comparar. Imagens publicadas com autorização das pacientes.
+              </p>
+            </div>
+            <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {antesDepois.map((item, i) => (
+                <motion.li
+                  key={item.tratamento}
+                  initial={reduzir ? false : { clipPath: "inset(100% 0% 0% 0%)" }}
+                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 1, delay: i * 0.12, ease: [0.65, 0, 0.35, 1] }}
+                >
+                  <ComparadorAntesDepois item={item} />
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {depoimentos.length > 0 && <CarrosselDepoimentos depoimentos={depoimentos} />}
 

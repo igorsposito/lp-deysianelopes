@@ -1,8 +1,9 @@
 import { depoimentos } from "@/data/depoimentos";
 import { perguntas } from "@/data/faq";
+import { antesDepois } from "@/data/resultados";
 import { navegacao, site } from "@/data/site";
 import { tratamentos } from "@/data/tratamentos";
-import type { Depoimento, NavItem, Pergunta, SiteInfo, Tratamento } from "@/data/types";
+import type { AntesDepois, Depoimento, NavItem, Pergunta, SiteInfo, Tratamento } from "@/data/types";
 
 // Camada de leitura: hoje lê arquivos TS; no futuro pode buscar de um CMS.
 export function getSite(): SiteInfo {
@@ -27,4 +28,8 @@ export function getDepoimentos(): Depoimento[] {
 
 export function getPerguntas(): Pergunta[] {
   return perguntas;
+}
+
+export function getAntesDepois(): AntesDepois[] {
+  return antesDepois;
 }

@@ -15,7 +15,7 @@ O briefing original está em `PROMPT-LP-DRA-DEYSIANE.md`. **As regras deste arqu
 - Tom: próximo, leve, bem-humorado, foco em naturalidade ("resultado que a gente não precisa explicar", "todo resultado começa na conversa"). Não usar o "começar com 1 ml": foi um caso específico de uma paciente, não é regra dela. Sem promessa de resultado.
 
 ## Conformidade (COFEN)
-- **Sem antes e depois com fotos de pacientes** até confirmação das regras do COFEN. A seção Resultados usa depoimentos em texto + filosofia de naturalidade.
+- **Sem fotos de antes e depois publicadas** até confirmação das regras do COFEN e autorização escrita das pacientes. Os moldes já existem em Resultados (`src/data/resultados.ts`): sem fotos, mostram "Foto antes e depois"; com `antes` e `depois` preenchidos, viram comparador arrastável.
 - Sem promessas de resultado, sem preços.
 
 ## Identidade visual
@@ -41,8 +41,8 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 2. Sobre (off) · foto `aboutsection.webp` à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
 3. Tratamentos (areia) · cabeçalho dividido (texto + CTA à esquerda, arte quadrada `drabotox.webp` à direita com moldura dourada deslocada) e cards em grade regular 3×2 · stagger de cards.
 4. Segurança (café escuro) · título largo no topo, foto `procedimentos.webp` + pontos · slide lateral.
-5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
-6. Faixa Primeiro passo (terracota, `primeiro-passo.tsx`) · "1º" grande como elemento gráfico + texto que convida para a avaliação · scale-in.
+5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande, moldes de antes e depois em grade 3 colunas (`ComparadorAntesDepois`) · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
+6. Faixa Primeiro passo (terracota, `primeiro-passo.tsx`) · texto + CTA à esquerda, 3 etapas da avaliação à direita · scale-in das etapas.
 7. Dúvidas (areia) · título sticky + accordion · blur in. JSON-LD `FAQPage` em `page.tsx`.
 8. Contato (off) · card sobreposto à foto `contatocta.webp` (quadrada no desktop, 4:5 no celular) · scale-in (zoom) da imagem.
 
@@ -51,7 +51,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 - Sempre `aria-hidden`, `pointer-events-none`, atrás do conteúdo: a seção recebe `relative isolate overflow-clip` e o container `relative z-10`.
 - Claro: monograma 4 a 6% em café. Escuro: marcas em dourado 6 a 8% + `Grain`.
 - Não repetir o mesmo elemento na mesma posição em seções vizinhas. Mapa atual:
-  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (seringa diagonal à esquerda + ramo no canto inferior direito + blobs) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · Primeiro passo (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
+  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (seringa diagonal à esquerda + ramo no canto inferior direito + blobs) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · Primeiro passo (DL dourado na esquerda inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
 
 ## WhatsApp (regra fixa)
 - Todo link de WhatsApp vem de `getWhatsAppLink(secao, extra?)` em `src/lib/whatsapp.ts`: `wa.me` + mensagem com `encodeURIComponent`, sempre começando com **"Olá, vim do site"** e citando a seção de origem. Nunca montar mensagem no JSX.
