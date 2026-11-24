@@ -50,7 +50,8 @@ export function Hero() {
         <Monograma className="w-full" />
       </Parallax>
 
-      <div className="container-lp relative z-10">
+      {/* Fora do container centralizado: texto mais perto da borda esquerda */}
+      <div className="relative z-10 w-full px-5 md:px-10 xl:px-16 2xl:px-24">
         <div className="max-w-xl lg:max-w-[40rem]">
           <h1 className="text-[2.6rem] leading-[1.04] font-light sm:text-6xl xl:text-7xl">
             {linhas.map((linha, i) => (
@@ -73,19 +74,19 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-cafe-suave md:mt-7">
-              Tratamentos de rejuvenescimento com naturalidade no Rio de Janeiro. Todo resultado começa na
-              conversa.
+              Sou a Deysiane, enfermeira esteta especialista em rejuvenescimento. Antes de qualquer agulha, eu
+              escuto, avalio e monto um plano para o seu rosto, na dose certa e com a segurança do ultrassom.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 md:mt-9">
               <WhatsAppLink secao="hero" className={buttonClasses("gold", "lg")}>
-                Agendar avaliação
+                Agendar minha avaliação
               </WhatsAppLink>
               <a href="#tratamentos" className={buttonClasses("outline", "lg", "bg-off/60 backdrop-blur-sm")}>
                 Ver tratamentos
               </a>
             </div>
             <p className="mt-7 text-sm text-cafe-suave md:mt-8">
-              Deysiane Lopes · Enfermeira esteta especialista em rejuvenescimento · Rio de Janeiro, RJ
+              Avaliação individual · Procedimentos guiados por ultrassom · Foco em naturalidade
             </p>
           </motion.div>
         </div>
