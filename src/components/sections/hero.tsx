@@ -50,8 +50,8 @@ export function Hero() {
         <Monograma className="w-full" />
       </Parallax>
 
-      {/* Fora do container centralizado: texto mais perto da borda esquerda */}
-      <div className="relative z-10 w-full px-5 md:px-10 xl:px-16 2xl:px-24">
+      {/* Recuo proporcional à tela: entre a borda e o container centralizado */}
+      <div className="relative z-10 w-full px-5 md:px-10 lg:pr-10 lg:pl-[7vw] 2xl:pl-[9vw]">
         <div className="max-w-xl lg:max-w-[40rem]">
           <h1 className="text-[2.6rem] leading-[1.04] font-light sm:text-6xl xl:text-7xl">
             {linhas.map((linha, i) => (
@@ -74,8 +74,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-cafe-suave md:mt-7">
-              Sou a Deysiane, enfermeira esteta especialista em rejuvenescimento. Antes de qualquer agulha, eu
-              escuto, avalio e monto um plano para o seu rosto, na dose certa e com a segurança do ultrassom.
+              Naturalidade não é fazer pouco. É fazer o certo, no lugar certo, na medida do seu rosto.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 md:mt-9">
               <WhatsAppLink secao="hero" className={buttonClasses("gold", "lg")}>
