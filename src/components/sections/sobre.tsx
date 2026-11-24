@@ -5,7 +5,9 @@ import Image from "next/image";
 import { useRef } from "react";
 import { Blob } from "@/components/decor/blob";
 import { Parallax } from "@/components/decor/parallax";
-import { Perfil } from "@/components/decor/perfil";
+import { ContaGotas } from "@/components/decor/conta-gotas";
+import { Gota } from "@/components/decor/gota";
+import { Molecula } from "@/components/decor/molecula";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { SiteInfo } from "@/data/types";
@@ -21,8 +23,22 @@ export function Sobre({ site }: { site: SiteInfo }) {
   return (
     <section id="sobre" ref={ref} className="relative isolate overflow-clip bg-off py-24 md:py-32">
       <Blob cor="areia" className="top-[12%] -left-32 size-96 opacity-80 md:size-[36rem]" />
-      <Parallax distancia={40} className="-top-6 -right-16 w-56 opacity-30 md:top-6 md:right-[-2%] md:w-[30rem] md:opacity-35">
-        <Perfil className="w-full" />
+      {/* Elementos de estética em line art dourada: molécula de ácido hialurônico, sérum e gotas */}
+      <Parallax distancia={35} giro={3} className="top-6 -right-24 w-72 -rotate-6 opacity-35 md:top-10 md:-right-10 md:w-[32rem] md:opacity-40">
+        <Molecula className="w-full" />
+      </Parallax>
+      <Parallax distancia={55} className="right-[4%] bottom-10 hidden w-28 rotate-[10deg] text-ouro-3 opacity-40 lg:block xl:w-32">
+        <ContaGotas className="w-full" />
+      </Parallax>
+      <Parallax distancia={80} className="top-[38%] right-[30%] hidden w-7 text-ouro-3 opacity-45 lg:block">
+        <div className="animate-drift">
+          <Gota className="w-full" />
+        </div>
+      </Parallax>
+      <Parallax distancia={110} className="right-[14%] bottom-[34%] w-5 text-ouro-3 opacity-40 md:w-6">
+        <div className="animate-drift" style={{ animationDelay: "-8s" }}>
+          <Gota className="w-full" />
+        </div>
       </Parallax>
 
       <div className="container-lp relative z-10 grid items-center gap-14 lg:grid-cols-12 lg:gap-16">

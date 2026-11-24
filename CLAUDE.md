@@ -47,11 +47,11 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 8. Contato (off) · card sobreposto à foto `consultorio.jpg` · scale-in (zoom) da imagem.
 
 ## Decoração (marca d'água), em `src/components/decor/`
-`Monograma` (DL em contorno), `Perfil` (line art de traço único), `Ramo` (botânico), `Arcos` (gotas ou círculos concêntricos dourados), `Blob` (forma orgânica com blur e drift), `Grain` (ruído feTurbulence), `Parallax` (wrapper com parallax leve).
+`Monograma` (DL em contorno), `Molecula` (ácido hialurônico), `ContaGotas` (frasco de sérum), `Gota`, `Ramo` (botânico), `Arcos` (gotas ou círculos concêntricos dourados), `Blob` (forma orgânica com blur e drift), `Grain` (ruído feTurbulence), `Parallax` (wrapper com parallax leve).
 - Sempre `aria-hidden`, `pointer-events-none`, atrás do conteúdo: a seção recebe `relative isolate overflow-clip` e o container `relative z-10`.
 - Claro: monograma 4 a 6% em café. Escuro: marcas em dourado 6 a 8% + `Grain`.
 - Não repetir o mesmo elemento na mesma posição em seções vizinhas. Mapa atual:
-  Hero (só DL na esquerda inferior, desktop) · Sobre (perfil na direita + blob) · Tratamentos (ramo no canto superior direito + blob) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
+  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (ramo no canto superior direito + blob) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
 
 ## WhatsApp (regra fixa)
 - Todo link de WhatsApp vem de `getWhatsAppLink(secao, extra?)` em `src/lib/whatsapp.ts`: `wa.me` + mensagem com `encodeURIComponent`, sempre começando com **"Olá, vim do site"** e citando a seção de origem. Nunca montar mensagem no JSX.

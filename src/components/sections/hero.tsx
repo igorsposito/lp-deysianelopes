@@ -91,6 +91,9 @@ export function Hero() {
         </div>
       </div>
 
+      {/* Linha dourada dividindo hero e Sobre */}
+      <div aria-hidden="true" className="bg-gold pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[2px]" />
+
       <a
         href="#sobre"
         aria-label="Rolar para a próxima seção"
