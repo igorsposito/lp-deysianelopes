@@ -37,7 +37,7 @@ O briefing original está em `PROMPT-LP-DRA-DEYSIANE.md`. **As regras deste arqu
 
 ## Mapa das seções (layout · animação, sem repetir animação)
 Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
-1. Hero · foto `herosection.png` em tela cheia (ela à direita), véu claro `hero-veil` e texto à esquerda (no celular, texto embaixo) · título linha a linha com máscara.
+1. Hero · foto `herosection.png` em tela cheia (ela à direita), véu claro `veil-baixo` (celular) e `lg:veil-esquerda` (desktop) e texto à esquerda (no celular, texto embaixo) · título linha a linha com máscara.
 2. Sobre (off) · foto à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
 3. Tratamentos (areia) · título sticky à esquerda, cards deslocados à direita · stagger de cards.
 4. Segurança (café escuro) · título largo no topo, foto `jaleco.jpg` + pontos · slide lateral.

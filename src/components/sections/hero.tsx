@@ -44,7 +44,7 @@ export function Hero() {
         />
       </motion.div>
       {/* Véu claro para leitura: de baixo no celular, da esquerda no desktop */}
-      <div aria-hidden="true" className="hero-veil pointer-events-none absolute inset-0 z-0" />
+      <div aria-hidden="true" className="veil-baixo lg:veil-esquerda pointer-events-none absolute inset-0 z-0" />
 
       <Parallax distancia={40} className="bottom-[-8%] left-[-10%] hidden w-[40rem] text-cafe opacity-[0.05] lg:block">
         <Monograma className="w-full" />
