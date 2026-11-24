@@ -54,7 +54,7 @@ export function Sobre({ site }: { site: SiteInfo }) {
               entre jalecos e agulhas, mas não só neles.
             </p>
             <p>
-              No atendimento, acredito que todo resultado começa na conversa. Antes de qualquer agulha, quero
+              No atendimento, acredito que todo resultado começa na conversa. Quero
               entender o que te incomoda e o que você espera, para cuidar da sua autoestima sem mudar quem
               você é.
             </p>
