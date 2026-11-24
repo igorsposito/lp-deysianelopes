@@ -12,7 +12,7 @@ O briefing original está em `PROMPT-LP-DRA-DEYSIANE.md`. **As regras deste arqu
 - Rio de Janeiro, RJ · Instagram https://www.instagram.com/deysianelb · WhatsApp 21 99717-6374 (`5521997176374`).
 - Sobre ela (texto corrido, sem bullets): 40 anos, pernambucana, criada em Rondônia, mora no Rio. Esposa e mãe, ama viajar, treinar, aprender coisas novas, pilota moto ("entre jalecos e agulhas"). Lema: "entre ciência e essência, sigo evoluindo com propósito, leveza e verdade".
 - Tratamentos: toxina botulínica, preenchimento labial, tratamento de olheiras ("nem toda olheira precisa de preenchimento"), preenchimento com ácido hialurônico, bioestimulador de colágeno, harmonização de perfil/equilíbrio facial, procedimentos guiados por ultrassonografia ("o que você não vê também importa").
-- Tom: próximo, leve, bem-humorado, foco em naturalidade ("resultado que a gente não precisa explicar", "todo resultado começa na conversa", "por que começar com 1 ml?"). Sem promessa de resultado.
+- Tom: próximo, leve, bem-humorado, foco em naturalidade ("resultado que a gente não precisa explicar", "todo resultado começa na conversa"). Não usar o "começar com 1 ml": foi um caso específico de uma paciente, não é regra dela. Sem promessa de resultado.
 
 ## Conformidade (COFEN)
 - **Sem antes e depois com fotos de pacientes** até confirmação das regras do COFEN. A seção Resultados usa depoimentos em texto + filosofia de naturalidade.
@@ -42,7 +42,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 3. Tratamentos (areia) · cabeçalho dividido (texto + CTA à esquerda, arte quadrada `drabotox.webp` à direita com moldura dourada deslocada) e cards em grade regular 3×2 · stagger de cards.
 4. Segurança (café escuro) · título largo no topo, foto `procedimentos.webp` + pontos · slide lateral.
 5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
-6. Faixa 1 ml (terracota) · número grande como elemento gráfico + texto · scale-in.
+6. Faixa Primeiro passo (terracota, `primeiro-passo.tsx`) · "1º" grande como elemento gráfico + texto que convida para a avaliação · scale-in.
 7. Dúvidas (areia) · título sticky + accordion · blur in. JSON-LD `FAQPage` em `page.tsx`.
 8. Contato (off) · card sobreposto à foto `contatocta.webp` (quadrada no desktop, 4:5 no celular) · scale-in (zoom) da imagem.
 
@@ -51,7 +51,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 - Sempre `aria-hidden`, `pointer-events-none`, atrás do conteúdo: a seção recebe `relative isolate overflow-clip` e o container `relative z-10`.
 - Claro: monograma 4 a 6% em café. Escuro: marcas em dourado 6 a 8% + `Grain`.
 - Não repetir o mesmo elemento na mesma posição em seções vizinhas. Mapa atual:
-  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (seringa diagonal à esquerda + ramo no canto inferior direito + blobs) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
+  Hero (só DL na esquerda inferior, desktop; linha dourada `bg-gold` de 2px dividindo do Sobre) · Sobre (molécula no alto à direita + conta-gotas embaixo à direita + gotas + blob; o perfil de rosto foi descartado) · Tratamentos (seringa diagonal à esquerda + ramo no canto inferior direito + blobs) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · Primeiro passo (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
 
 ## WhatsApp (regra fixa)
 - Todo link de WhatsApp vem de `getWhatsAppLink(secao, extra?)` em `src/lib/whatsapp.ts`: `wa.me` + mensagem com `encodeURIComponent`, sempre começando com **"Olá, vim do site"** e citando a seção de origem. Nunca montar mensagem no JSX.

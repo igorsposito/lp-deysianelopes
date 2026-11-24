@@ -5,7 +5,7 @@ import { Resultados } from "@/components/sections/resultados";
 import { Seguranca } from "@/components/sections/seguranca";
 import { Sobre } from "@/components/sections/sobre";
 import { Tratamentos } from "@/components/sections/tratamentos";
-import { UmMl } from "@/components/sections/um-ml";
+import { PrimeiroPasso } from "@/components/sections/primeiro-passo";
 import { getDepoimentos, getPerguntas, getSite, getTratamentos } from "@/lib/data";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
       <Tratamentos tratamentos={getTratamentos()} />
       <Seguranca />
       <Resultados depoimentos={getDepoimentos()} />
-      <UmMl />
+      <PrimeiroPasso />
       <Duvidas perguntas={perguntas} />
       <Contato site={site} />
       <script

@@ -18,11 +18,6 @@ export const perguntas: Pergunta[] = [
       "A proposta é o contrário: resultado que a gente não precisa explicar. Doses e volumes são pensados para respeitar os seus traços.",
   },
   {
-    pergunta: "Por que começar com 1 ml?",
-    resposta:
-      "Porque naturalidade se constrói aos poucos. Começar com menos permite avaliar como o seu rosto responde e ajustar com segurança, se for preciso.",
-  },
-  {
     pergunta: "Toda olheira precisa de preenchimento?",
     resposta:
       "Não. Existem olheiras de causas diferentes e nem todas melhoram com preenchimento. Por isso a avaliação vem antes de qualquer indicação.",

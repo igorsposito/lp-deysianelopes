@@ -7,7 +7,7 @@ export type SecaoWhatsApp =
   | "sobre"
   | "ultrassom"
   | "resultados"
-  | "um-ml"
+  | "primeiro-passo"
   | "faq"
   | "contato"
   | "cta-final"
@@ -24,8 +24,8 @@ const mensagens: Record<SecaoWhatsApp, (extra?: string) => string> = {
     "Olá, vim do site e quero saber como funciona o procedimento guiado por ultrassom.",
   resultados: () =>
     "Olá, vim do site, li os depoimentos e quero agendar minha avaliação.",
-  "um-ml": () =>
-    "Olá, vim do site, li sobre começar com 1 ml e quero agendar minha avaliação.",
+  "primeiro-passo": () =>
+    "Olá, vim do site e quero dar o primeiro passo: agendar minha avaliação.",
   faq: () => "Olá, vim do site, li as perguntas frequentes e ainda tenho uma dúvida.",
   contato: () => "Olá, vim do site e quero falar com a Deysiane.",
   "cta-final": () => "Olá, vim do site e quero dar o primeiro passo com uma avaliação.",

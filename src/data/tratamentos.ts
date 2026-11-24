@@ -18,7 +18,7 @@ export const tratamentos: Tratamento[] = [
     slug: "preenchimento-labial",
     nome: "Preenchimento labial",
     resumo:
-      "Contorno, hidratação e volume na medida certa. Por isso a gente fala tanto em começar com 1 ml.",
+      "Contorno, hidratação e volume na medida certa, sem perder a cara de seus.",
     paraQuem: "Para quem quer lábios mais definidos e com cara de seus.",
     destaques: [
       "Ácido hialurônico de qualidade",

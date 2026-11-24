@@ -7,10 +7,13 @@ import { Parallax } from "@/components/decor/parallax";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 
-// Animação da seção: número grande entrando em scale-in.
-export function UmMl() {
+// Animação da seção: "1º" grande entrando em scale-in.
+export function PrimeiroPasso() {
   return (
-    <section aria-labelledby="titulo-um-ml" className="bg-terracota-grad relative isolate overflow-clip py-20 text-off md:py-28">
+    <section
+      aria-labelledby="titulo-primeiro-passo"
+      className="bg-terracota-grad relative isolate overflow-clip py-20 text-off md:py-28"
+    >
       <Grain />
       <Parallax distancia={40} className="right-[-18%] bottom-[-30%] w-[22rem] rotate-[8deg] text-ouro-2 opacity-[0.08] md:right-[-6%] md:w-[36rem]">
         <Monograma className="w-full" />
@@ -25,21 +28,20 @@ export function UmMl() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          1<span className="text-[0.4em] font-light">ml</span>
+          1<span className="align-top text-[0.4em] font-light">º</span>
         </motion.p>
 
         <div className="md:col-span-7">
-          <h2 id="titulo-um-ml" className="text-3xl leading-tight font-light md:text-5xl">
-            Por que começar com <span className="font-semibold">1 ml?</span>
+          <h2 id="titulo-primeiro-passo" className="text-3xl leading-tight font-light md:text-5xl">
+            Você merece se olhar no espelho e se <span className="font-semibold">reconhecer</span>.
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-off/90">
-            Porque naturalidade se constrói aos poucos. A gente começa com menos, espera o produto assentar e
-            reavalia junto antes de decidir se precisa de mais. Assim o resultado acompanha o seu rosto, sem
-            exagero.
+            E o primeiro passo é só uma conversa. Na avaliação você conta o que te incomoda, entende as opções
+            e decide no seu tempo, sem pressão. Muita gente descobre que precisa de bem menos do que imaginava.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <WhatsAppLink secao="um-ml" className={buttonClasses("gold", "lg")}>
-              Quero começar assim
+            <WhatsAppLink secao="primeiro-passo" className={buttonClasses("gold", "lg")}>
+              Quero dar o primeiro passo
             </WhatsAppLink>
             <a href="#duvidas" className={buttonClasses("on-dark", "lg")}>
               Ver dúvidas frequentes
