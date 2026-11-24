@@ -38,6 +38,15 @@ const principios = [
 ];
 
 // Animação da seção: reveal com máscara (clip-path abrindo de baixo para cima).
+// Quem observa a rolagem é o grid (não recortado); os filhos herdam o estado via variants.
+// Observar o próprio elemento recortado em 100% pode nunca disparar.
+const revelar = {
+  oculto: { clipPath: "inset(100% 0% 0% 0%)" },
+  visivel: (i: number) => ({
+    clipPath: "inset(0% 0% 0% 0%)",
+    transition: { duration: 1, delay: i * 0.12, ease: [0.65, 0, 0.35, 1] as const },
+  }),
+};
 export function Resultados({
   depoimentos,
   antesDepois,
@@ -68,15 +77,18 @@ export function Resultados({
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:mt-24 md:grid-cols-12 md:gap-x-10 md:gap-y-12">
+        <motion.div
+          className="mt-16 grid gap-6 md:mt-24 md:grid-cols-12 md:gap-x-10 md:gap-y-12"
+          initial={reduzir ? false : "oculto"}
+          whileInView="visivel"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           {principios.map((p, i) => (
             <motion.article
               key={p.numero}
               className={`relative overflow-hidden rounded-3xl bg-areia p-8 md:p-10 ${p.classe}`}
-              initial={reduzir ? false : { clipPath: "inset(100% 0% 0% 0% round 1.5rem)" }}
-              whileInView={{ clipPath: "inset(0% 0% 0% 0% round 1.5rem)" }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 1, delay: i * 0.1, ease: [0.65, 0, 0.35, 1] }}
+              custom={i}
+              variants={revelar}
             >
               <span
                 aria-hidden
@@ -88,7 +100,7 @@ export function Resultados({
               <p className="mt-4 max-w-md leading-relaxed text-cafe-suave">{p.texto}</p>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         {antesDepois.length > 0 && (
           <div className="mt-24 md:mt-32">
@@ -100,19 +112,22 @@ export function Resultados({
                 Arraste a linha para comparar. Imagens publicadas com autorização das pacientes.
               </p>
             </div>
-            <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <motion.ul
+              className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+              initial={reduzir ? false : "oculto"}
+              whileInView="visivel"
+              viewport={{ once: true, amount: 0.15 }}
+            >
               {antesDepois.map((item, i) => (
                 <motion.li
                   key={item.tratamento}
-                  initial={reduzir ? false : { clipPath: "inset(100% 0% 0% 0%)" }}
-                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 1, delay: i * 0.12, ease: [0.65, 0, 0.35, 1] }}
+                  custom={i}
+                  variants={revelar}
                 >
                   <ComparadorAntesDepois item={item} />
                 </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         )}
 
