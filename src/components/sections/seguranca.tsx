@@ -55,7 +55,7 @@ export function Seguranca() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cafe-suave">
               <Image
                 src={fotoSeguranca}
-                alt="Deysiane Lopes estudando no notebook, com materiais técnicos sobre bioestimuladores"
+                alt="Deysiane Lopes, de jaleco terracota e máscara, durante um atendimento"
                 placeholder="blur"
                 fill
                 sizes="(min-width: 1024px) 38vw, 92vw"

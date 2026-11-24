@@ -5,8 +5,8 @@
 - [ ] Fotos originais em alta resolução (não usar prints do Instagram):
   - ~~hero~~: recebida (`herosection.png`, usada em tela cheia no hero).
   - ~~sobre~~: recebida (`aboutsection.webp`, jaleco terracota). Se houver versão em resolução maior (828 px de largura hoje), trocar mantendo o nome.
-  - ~~segurança~~: recebida (`procedimentos.webp`, ela estudando no notebook).
-  - `consultorio.jpg`: ambiente do consultório (horizontal, mín. 1600×1067).
+  - ~~segurança~~: recebida (`procedimentos.webp`, ela atendendo um paciente). Confirmar que o paciente autorizou o uso da imagem.
+  - ~~contato~~: recebida (`contatocta.webp`, ela no notebook).
   - `procedimento.jpg`: ela atendendo ou aplicando, de preferência com o ultrassom (horizontal, mín. 1200×900).
 - [ ] Logo oficial (se houver). Hoje o logo é tipográfico.
 - [ ] Endereço do consultório e horários de atendimento (seção Contato, mapa e JSON-LD).

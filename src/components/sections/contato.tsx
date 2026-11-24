@@ -7,6 +7,7 @@ import { InstagramIcon } from "@/components/icons/instagram";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { SiteInfo } from "@/data/types";
+import fotoContato from "../../../public/images/contatocta.webp";
 
 // Animação da seção: scale-in da imagem (zoom suave de fora para dentro).
 export function Contato({ site }: { site: SiteInfo }) {
@@ -15,18 +16,19 @@ export function Contato({ site }: { site: SiteInfo }) {
       <div className="container-lp grid items-center lg:grid-cols-12">
         <div className="relative overflow-hidden rounded-[2rem] bg-areia-escura lg:col-span-7 lg:col-start-6 lg:row-start-1">
           <motion.div
-            className="relative aspect-[4/3] lg:aspect-[5/4]"
+            className="relative aspect-[4/5] sm:aspect-square"
             initial={{ scale: 1.18 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image
-              src="/images/consultorio.jpg"
-              alt="Consultório de Deysiane Lopes no Rio de Janeiro"
+              src={fotoContato}
+              alt="Deysiane Lopes no consultório, respondendo mensagens no notebook"
+              placeholder="blur"
               fill
               sizes="(min-width: 1024px) 55vw, 92vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </motion.div>
         </div>

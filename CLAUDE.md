@@ -44,7 +44,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
 6. Faixa 1 ml (terracota) · número grande como elemento gráfico + texto · scale-in.
 7. Dúvidas (areia) · título sticky + accordion · blur in. JSON-LD `FAQPage` em `page.tsx`.
-8. Contato (off) · card sobreposto à foto `consultorio.jpg` · scale-in (zoom) da imagem.
+8. Contato (off) · card sobreposto à foto `contatocta.webp` (quadrada no desktop, 4:5 no celular) · scale-in (zoom) da imagem.
 
 ## Decoração (marca d'água), em `src/components/decor/`
 `Monograma` (DL em contorno), `Molecula` (ácido hialurônico), `ContaGotas` (frasco de sérum), `Gota`, `Seringa`, `Ramo` (botânico), `Arcos` (gotas ou círculos concêntricos dourados), `Blob` (forma orgânica com blur e drift), `Grain` (ruído feTurbulence), `Parallax` (wrapper com parallax leve).
@@ -59,7 +59,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 
 ## Dados e imagens
 - Conteúdo em arquivos TS tipados em `src/data/`, lido por funções em `src/lib/data/` (pronto para virar CMS).
-- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `aboutsection.webp`, `procedimentos.webp`, `drabotox.webp`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
+- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `aboutsection.webp`, `procedimentos.webp`, `drabotox.webp`, `contatocta.webp`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
 - `next/image`: usar `preload` (não `priority`). Sem `new Date()`/`Math.random()` em Server Components (Cache Components): usar Client Component.
 
 ## Fluxo de trabalho

@@ -9,7 +9,6 @@ import sharp from "sharp";
 const raiz = join(dirname(fileURLToPath(import.meta.url)), "..", "public");
 
 const imagens = [
-  { arquivo: "images/consultorio.jpg", w: 1600, h: 1067, rotulo: "Consultório" },
   { arquivo: "images/procedimento.jpg", w: 1200, h: 900, rotulo: "Procedimento" },
 ];
 
