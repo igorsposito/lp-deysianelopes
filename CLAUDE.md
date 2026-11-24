@@ -37,7 +37,7 @@ O briefing original está em `PROMPT-LP-DRA-DEYSIANE.md`. **As regras deste arqu
 
 ## Mapa das seções (layout · animação, sem repetir animação)
 Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
-1. Hero (areia) · split, título à esquerda, foto `hero.jpg` à direita · título linha a linha com máscara.
+1. Hero · foto `herosection.png` em tela cheia (ela à direita), véu claro `hero-veil` e texto à esquerda (no celular, texto embaixo) · título linha a linha com máscara.
 2. Sobre (off) · foto à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
 3. Tratamentos (areia) · título sticky à esquerda, cards deslocados à direita · stagger de cards.
 4. Segurança (café escuro) · título largo no topo, foto `jaleco.jpg` + pontos · slide lateral.
@@ -51,7 +51,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 - Sempre `aria-hidden`, `pointer-events-none`, atrás do conteúdo: a seção recebe `relative isolate overflow-clip` e o container `relative z-10`.
 - Claro: monograma 4 a 6% em café. Escuro: marcas em dourado 6 a 8% + `Grain`.
 - Não repetir o mesmo elemento na mesma posição em seções vizinhas. Mapa atual:
-  Hero (blobs + DL na esquerda inferior) · Sobre (perfil na direita + blob) · Tratamentos (ramo no canto superior direito + blob) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
+  Hero (só DL na esquerda inferior, desktop) · Sobre (perfil na direita + blob) · Tratamentos (ramo no canto superior direito + blob) · Segurança (gotas douradas na direita + grain) · Resultados (DL na direita superior + círculos na esquerda inferior + blob) · 1 ml (DL dourado na direita inferior + grain) · Dúvidas (ramo espelhado no canto inferior esquerdo + blob) · Rodapé (grain).
 
 ## WhatsApp (regra fixa)
 - Todo link de WhatsApp vem de `getWhatsAppLink(secao, extra?)` em `src/lib/whatsapp.ts`: `wa.me` + mensagem com `encodeURIComponent`, sempre começando com **"Olá, vim do site"** e citando a seção de origem. Nunca montar mensagem no JSX.
@@ -59,7 +59,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 
 ## Dados e imagens
 - Conteúdo em arquivos TS tipados em `src/data/`, lido por funções em `src/lib/data/` (pronto para virar CMS).
-- Imagens em `public/images/` com nomes descritivos (`hero.jpg`, `sobre.jpg`, `jaleco.jpg`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
+- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `sobre.jpg`, `jaleco.jpg`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
 - `next/image`: usar `preload` (não `priority`). Sem `new Date()`/`Math.random()` em Server Components (Cache Components): usar Client Component.
 
 ## Fluxo de trabalho
