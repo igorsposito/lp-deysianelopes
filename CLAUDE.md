@@ -40,7 +40,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 1. Hero · foto `herosection.png` em tela cheia (ela à direita), véu claro `veil-baixo` (celular) e `lg:veil-esquerda` (desktop) e texto à esquerda (no celular, texto embaixo) · título linha a linha com máscara.
 2. Sobre (off) · foto `aboutsection.webp` à esquerda 5/12, texto corrido 7/12 · parallax suave na foto.
 3. Tratamentos (areia) · título sticky à esquerda, cards deslocados à direita · stagger de cards.
-4. Segurança (café escuro) · título largo no topo, foto `jaleco.jpg` + pontos · slide lateral.
+4. Segurança (café escuro) · título largo no topo, foto `procedimentos.webp` + pontos · slide lateral.
 5. Resultados (off) · cabeçalho dividido, princípios em grid assimétrico com número grande · reveal com máscara (clip-path). Carrossel de depoimentos aparece quando `src/data/depoimentos.ts` tiver itens.
 6. Faixa 1 ml (terracota) · número grande como elemento gráfico + texto · scale-in.
 7. Dúvidas (areia) · título sticky + accordion · blur in. JSON-LD `FAQPage` em `page.tsx`.
@@ -59,7 +59,7 @@ Ordem em `src/app/page.tsx`, componentes em `src/components/sections/`:
 
 ## Dados e imagens
 - Conteúdo em arquivos TS tipados em `src/data/`, lido por funções em `src/lib/data/` (pronto para virar CMS).
-- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `aboutsection.webp`, `jaleco.jpg`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
+- Imagens em `public/images/` com nomes descritivos (`herosection.png`, `aboutsection.webp`, `procedimentos.webp`, `consultorio.jpg`, `procedimento.jpg`). Placeholders gerados por `npm run placeholders`, que **nunca sobrescreve arquivo existente**.
 - `next/image`: usar `preload` (não `priority`). Sem `new Date()`/`Math.random()` em Server Components (Cache Components): usar Client Component.
 
 ## Fluxo de trabalho

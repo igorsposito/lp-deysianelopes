@@ -8,6 +8,7 @@ import { Grain } from "@/components/decor/grain";
 import { Parallax } from "@/components/decor/parallax";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
+import fotoSeguranca from "../../../public/images/procedimentos.webp";
 
 const pontos = [
   {
@@ -53,8 +54,9 @@ export function Seguranca() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cafe-suave">
               <Image
-                src="/images/jaleco.jpg"
-                alt="Deysiane Lopes de jaleco, preparada para um procedimento guiado por ultrassom"
+                src={fotoSeguranca}
+                alt="Deysiane Lopes estudando no notebook, com materiais técnicos sobre bioestimuladores"
+                placeholder="blur"
                 fill
                 sizes="(min-width: 1024px) 38vw, 92vw"
                 className="object-cover"
