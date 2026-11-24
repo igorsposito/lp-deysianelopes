@@ -4,7 +4,7 @@
 - [ ] Número do COREN-RJ (hoje aparece `[COREN-RJ nº]` no rodapé; também vai no Sobre).
 - [ ] Fotos originais em alta resolução (não usar prints do Instagram):
   - ~~hero~~: recebida (`herosection.png`, usada em tela cheia no hero).
-  - `sobre.jpg`: foto de camisa branca na janela (vertical, mín. 1200×1500).
+  - ~~sobre~~: recebida (`aboutsection.webp`, jaleco terracota). Se houver versão em resolução maior (828 px de largura hoje), trocar mantendo o nome.
   - `jaleco.jpg`: outra foto de jaleco, para a seção de segurança/ultrassom.
   - `consultorio.jpg`: ambiente do consultório (horizontal, mín. 1600×1067).
   - `procedimento.jpg`: ela atendendo ou aplicando, de preferência com o ultrassom (horizontal, mín. 1200×900).

@@ -9,6 +9,7 @@ import { Perfil } from "@/components/decor/perfil";
 import { buttonClasses } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import type { SiteInfo } from "@/data/types";
+import fotoSobre from "../../../public/images/aboutsection.webp";
 
 // Animação da seção: parallax suave na foto.
 export function Sobre({ site }: { site: SiteInfo }) {
@@ -29,11 +30,12 @@ export function Sobre({ site }: { site: SiteInfo }) {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-areia-escura">
             <motion.div className="absolute -inset-y-[10%] inset-x-0" style={{ y }}>
               <Image
-                src="/images/sobre.jpg"
-                alt="Deysiane Lopes de camisa branca, perto da janela"
+                src={fotoSobre}
+                alt="Deysiane Lopes sorrindo, de jaleco terracota, no consultório"
+                placeholder="blur"
                 fill
                 sizes="(min-width: 1024px) 38vw, 92vw"
-                className="object-cover"
+                className="object-cover object-[50%_45%]"
               />
             </motion.div>
           </div>
